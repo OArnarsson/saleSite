@@ -1,5 +1,17 @@
-tr {
-    td:last-child {
-        text-align: right;
+#sellers {
+    h1 {
+        margin-top: 1rem;
+    }
+    
+    tr {
+        td:last-child {
+            text-align: right;
+        }
+    }
+
+    .modal-footer {
+        button:last-child {
+            margin-left: auto;
+        }
     }
 }

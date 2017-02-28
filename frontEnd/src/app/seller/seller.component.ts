@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-seller',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SellerComponent implements OnInit {
 
-  constructor() { }
-
   ngOnInit() {
   }
 
+  closeResult: string;
+
+  constructor(private modalService: NgbModal) {}
+
+  open(edit) {
+    this.modalService.open(edit).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    });
+  }
 }
