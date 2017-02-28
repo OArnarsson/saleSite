@@ -1,7 +1,7 @@
 <section id="sellers">
   <div class="container">
     <h1 class="display-4 col-sm-10">Sellers</h1>
-    <button type="button" class="addButt btn btn-primary pull-right" (click)="open(create)">
+    <button type="button" class="addButt btn btn-primary pull-right" (click)="addEditSeller()">
         Add seller &nbsp;<i class="fa fa-plus-square-o fa-1x" aria-hidden="true"></i>
       </button>
     <table class="table table-hover">
@@ -14,95 +14,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Mark Otto</td>
-          <td>Sporting Equipment</td>
+        <tr *ngFor="let seller of Sellers">
+          <td>{{seller.name}}</td>
+          <td>{{seller.category}}</td>
           <td>13:37</td>
-          <td><button class="btn btn-sm btn-secondary" (click)="open(edit)"><i class="fa fa-cog" aria-hidden="true"></i></button></td>
-        </tr>
-        <tr>
-          <td>Jacob Thornton</td>
-          <td>Jewelry</td>
-          <td>19:03</td>
-          <td>
-            <button class="btn btn-sm btn-secondary" (click)="open(edit)"><i class="fa fa-cog" aria-hidden="true"></i></button>
-          </td>
-        </tr>
-        <tr>
-          <td>Larry the Bird</td>
-          <td>Exotic animals</td>
-          <td>22:48</td>
           <td><button class="btn btn-sm btn-secondary" (click)="open(edit)"><i class="fa fa-cog" aria-hidden="true"></i></button></td>
         </tr>
       </tbody>
     </table>
   </div>
-  
-  <template #edit ngbModalContainer let-c="close" let-d="dismiss">
-    <div class="modal-header">
-      <h4 class="modal-title">Edit seller information</h4>
-      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-      <form>
-        <div class="form-group row">
-          <label for="sellerName" class="col-sm-3 col-form-label">Seller name: </label>
-          <div class="col-sm-8">
-            <input type="email" class="form-control" id="sellerName" placeholder="name..">
-          </div>
-        </div>
-  
-        <div class="form-group row">
-          <label for="sellerCategory" class="col-sm-3 col-form-label">Category: </label>
-          <div class="col-sm-8">
-            <select class="custom-select" id="sellerCategory">
-        <option selected value="1">Sporting equipment</option>
-        <option value="2">Jewelry</option>
-        <option value="3">Exotic animals</option>
-      </select>
-          </div>
-        </div>
-      </form>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-danger" (click)="c('Close click')">Delete seller</button>
-      <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
-    </div>
-  </template>
-  
-    <template #create ngbModalContainer let-c="close" let-d="dismiss">
-    <div class="modal-header">
-      <h4 class="modal-title">Create a new seller</h4>
-      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-      <form>
-        <div class="form-group row">
-          <label for="sellerName" class="col-sm-3 col-form-label">Seller name: </label>
-          <div class="col-sm-8">
-            <input type="email" class="form-control" id="sellerName" placeholder="name..">
-          </div>
-        </div>
-  
-        <div class="form-group row">
-          <label for="sellerCategory" class="col-sm-3 col-form-label">Category: </label>
-          <div class="col-sm-8">
-            <select class="custom-select" id="sellerCategory">
-        <option selected value="1">Sporting equipment</option>
-        <option value="2">Jewelry</option>
-        <option value="3">Exotic animals</option>
-      </select>
-          </div>
-        </div>
-      </form>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
-      <button type="button" class="btn btn-success" (click)="c('Close click')">Create</button>
-    </div>
-  </template>
 </section>
+<template ngbModalContainer></template> <!-- This is the template where the modal is being injected! -->

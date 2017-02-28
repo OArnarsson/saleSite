@@ -3,22 +3,26 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 import { AppComponent } from './app.component';
 import { SellerComponent } from './seller/seller.component';
+import { DialogComponent } from './dialog/dialog.component';
+import { SellerService } from "./apiServices/seller.service";
 
 @NgModule({
   declarations: [
     AppComponent,
-    SellerComponent
+    SellerComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [SellerService],
+  bootstrap: [AppComponent],
+  entryComponents: [DialogComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
