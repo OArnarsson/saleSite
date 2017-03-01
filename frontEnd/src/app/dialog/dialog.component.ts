@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Seller } from '../classes/seller'
 
 @Component({
   selector: 'app-dialog',
@@ -7,7 +8,9 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./dialog.component.scss']
 })
 export class DialogComponent implements OnInit {
-  public seller: string;
+  public seller: Seller;
+  public title: string;
+  public onOkButton: string;
   constructor(public modal: NgbActiveModal) { }
 
   ngOnInit() {

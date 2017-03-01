@@ -1,7 +1,7 @@
 <section id="sellers">
   <div class="container">
     <h1 class="display-4 col-sm-10">Sellers</h1>
-    <button type="button" class="addButt btn btn-primary pull-right" (click)="addEditSeller()">
+    <button type="button" class="addButt btn btn-primary pull-right" (click)="newSeller()">
         Add seller &nbsp;<i class="fa fa-plus-square-o fa-1x" aria-hidden="true"></i>
       </button>
     <table class="table table-hover">
@@ -18,7 +18,7 @@
           <td>{{seller.name}}</td>
           <td>{{seller.category}}</td>
           <td>13:37</td>
-          <td><button class="btn btn-sm btn-secondary" (click)="open(edit)"><i class="fa fa-cog" aria-hidden="true"></i></button></td>
+          <td><button class="btn btn-sm btn-secondary" (click)="editSeller(seller)"><i class="fa fa-cog" aria-hidden="true"></i></button></td>
         </tr>
       </tbody>
     </table>
