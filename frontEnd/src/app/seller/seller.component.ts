@@ -39,11 +39,10 @@ export class SellerComponent implements OnInit {
   }
 
   popModal(title: string, okBut: string, seller: Seller, rest: string) {
-    const newSeller = seller;
     const modal = this.modalService.open(DialogComponent);
     modal.componentInstance.title = title;
     modal.componentInstance.onOkButton = okBut;
-    modal.componentInstance.seller = newSeller;
+    modal.componentInstance.seller = JSON.parse(JSON.stringify(seller));
     modal.result.then(obj => {
       this.addSellerToDb(obj, rest);
     }).catch(err => {
