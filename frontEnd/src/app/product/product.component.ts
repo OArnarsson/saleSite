@@ -11,7 +11,7 @@ import * as _ from "lodash";
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
-  @Input () sellerId: any;
+  @Input() sellerId: any;
   public page = 1;
   public tabs: Tab[];
 
@@ -24,15 +24,15 @@ export class ProductComponent implements OnInit {
     this.tabs.push(def);
     this.tabs.push(top10);
     this.productService.getProductsById(this.sellerId).subscribe(
-        (products) => {
-          this.tabs[0].products = products;
-          this.tabs[1].products = this.getTop10();
-        }
+      (products) => {
+        this.tabs[0].products = products;
+        this.tabs[1].products = this.getTop10();
+      }
     )
   }
 
-  getTop10(): Product[]{
-    return _.take((_.sortBy(this.tabs[0].products, [function(o) { return o.quantitySold; }])).reverse(), 10);
+  getTop10(): Product[] {
+    return _.take((_.sortBy(this.tabs[0].products, [function (o) { return o.quantitySold; }])).reverse(), 10);
   }
 
 }

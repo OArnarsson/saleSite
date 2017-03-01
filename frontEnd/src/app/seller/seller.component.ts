@@ -24,10 +24,10 @@ export class SellerComponent implements OnInit {
     this.Sellers = []; // Construct the arr. in case of failure we wont get an error in the view.
     this.configHandler();
     this.sellerService.getSellers().subscribe(
-        (data) => {
-          this.Sellers = data;
-        },
-        this.errorHandler);
+      (data) => {
+        this.Sellers = data;
+      },
+      this.errorHandler);
   }
 
   newSeller() {
@@ -58,12 +58,12 @@ export class SellerComponent implements OnInit {
     };
     this.errorHandler = (err) => {
       let msg = '';
-      if(err.status == 404){
+      if (err.status == 404) {
         msg = 'Damn.. Lost again!';
-      }else{
+      } else {
         msg = 'Server fucked us..';
       }
-      if(err.status == 0){
+      if (err.status == 0) {
         msg = 'Node server offline';
       }
       this.addToast(`Mission Failed ERROR ${err.status}`, msg, 'error');
@@ -98,10 +98,10 @@ export class SellerComponent implements OnInit {
       showClose: true,
       timeout: 5000,
       theme: 'material',
-      onAdd: (toast: ToastData) => {},
-      onRemove: function (toast: ToastData) {}
+      onAdd: (toast: ToastData) => { },
+      onRemove: function (toast: ToastData) { }
     };
-    if (code === 'success'){
+    if (code === 'success') {
       this.toastyService.success(toastOptions);
     } else {
       this.toastyService.error(toastOptions);

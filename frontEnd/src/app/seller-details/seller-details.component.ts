@@ -29,10 +29,10 @@ export class SellerDetailsComponent implements OnInit {
 
   getInitData(sellerId: number) {
     this.sellerService.getSingleSeller(sellerId).subscribe(
-        (seller) => {
-          this.seller = seller;
-          console.log(JSON.stringify(this.seller));
-        }
+      (seller) => {
+        this.seller = seller;
+        console.log(JSON.stringify(this.seller));
+      }
     );
   }
 

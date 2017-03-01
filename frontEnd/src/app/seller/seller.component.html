@@ -16,7 +16,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let seller of Sellers">
-          <td [routerLink]="['seller', seller.id]"> 
+          <td [routerLink]="['seller', seller.id]">
             <button type="button" class="btn btn-link">{{seller.name}}</button>
           </td>
           <td>{{seller.category}}</td>
