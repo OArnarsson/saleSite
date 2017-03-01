@@ -1,9 +1,17 @@
 <section id="sellerDetails">
   <div class="container">
-    <h1 class="display-4 col-sm-10">Details</h1>
-    <button type="button" class="addButt btn btn-primary pull-right" (click)="newProduct()">
+    <div class="d-flex">
+      <div class="sellerInfo">
+        <img src="http://placehold.it/150x150" alt="" class="rounded">
+        <div class="flex-column d-inline-flex">
+          <h1 class="display-4">Seller name</h1>
+          <h5>Category</h5>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary addButt" (click)="newProduct()">
         Add product &nbsp;<i class="fa fa-plus-square-o fa-1x" aria-hidden="true"></i>
       </button>
+    </div>
     <ngb-tabset>
       <ngb-tab title="All products">
         <template ngbTabContent>

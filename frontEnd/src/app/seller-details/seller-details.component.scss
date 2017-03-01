@@ -1,6 +1,26 @@
 #sellerDetails {
-    h1 {
+    .d-flex {
         margin: 1rem 0;
+        padding-left: 0;
+        flex-wrap: wrap;
+        
+        .sellerInfo {
+            height: 100%;
+            display: inline-flex;
+            flex-grow: 1;
+
+            img.rounded {
+                margin: 0 1rem 1rem 0;
+            }
+
+            .flex-column {
+                justify-content: flex-start;
+            }
+        }
+    }
+    
+    h1 {
+        padding-left: 0;
     }
 
     ngb-tabset {
