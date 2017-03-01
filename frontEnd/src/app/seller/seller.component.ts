@@ -43,7 +43,7 @@ export class SellerComponent implements OnInit {
     const modal = this.modalService.open(DialogComponent);
     modal.componentInstance.title = title;
     modal.componentInstance.onOkButton = okBut;
-    modal.componentInstance.seller = newSeller;
+    modal.componentInstance.seller = JSON.parse(JSON.stringify(newSeller));
     modal.result.then(obj => {
       this.addSellerToDb(obj, rest);
     }).catch(err => {

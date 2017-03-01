@@ -47,25 +47,25 @@
 			<div class="form-group row">
 				<label for="productName" class="col-3 col-form-label">Product title:</label>
 				<div class="col-8">
-					<input class="form-control" type="text" id="productName" autofocus>
+					<input [(ngModel)]="product.name" name="name" class="form-control" type="text" id="productName" autofocus>
 				</div>
 			</div>
 			<div class="form-group row">
 				<label for="productPrice" class="col-3 col-form-label">Price:</label>
 				<div class="col-8">
-					<input class="form-control" type="number" id="productPrice">
+					<input [(ngModel)]="product.price" name="price" class="form-control" type="number" id="productPrice">
 				</div>
 			</div>
 			<div class="form-group row">
 				<label for="productStock" class="col-3 col-form-label">Stock:</label>
 				<div class="col-8">
-					<input class="form-control" type="number" id="productStock">
+					<input [(ngModel)]="product.quantityInStock" name="stock" class="form-control" type="number" id="productStock">
 				</div>
 			</div>
 			<div class="form-group row">
 				<label for="imagePath" class="col-3 col-form-label">Image url:</label>
 				<div class="col-8">
-					<input class="form-control" type="text" id="imagePath">
+					<input [(ngModel)]="product.imagePath" name="imagePath" class="form-control" type="text" id="imagePath">
 				</div>
 			</div>
 		</form>
