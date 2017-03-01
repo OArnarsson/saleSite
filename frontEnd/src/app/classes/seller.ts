@@ -1,3 +1,4 @@
+import { Product } from './product';
 
 export class Seller {
   id: number;
@@ -5,10 +6,10 @@ export class Seller {
   category: string;
   imagePath: string;
 
-  constructor(id, name, category, imagePath){
-    this.id = id;
-    this.name = name;
-    this.category = category;
-    this.imagePath = imagePath;
+  constructor(id, name, category, imagePath) {
+    id;
+    name;
+    category;
+    imagePath;
   }
 }

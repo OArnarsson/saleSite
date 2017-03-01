@@ -10,6 +10,7 @@ import { SellerService } from './apiServices/seller.service';
 import { ToastyModule } from 'ng2-toasty';
 import { ProductComponent } from './product/product.component';
 import { AppRoutingModule } from "./app.routing.module";
+import { SellerDetailsComponent } from './seller-details/seller-details.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { AppRoutingModule } from "./app.routing.module";
     AppComponent,
     SellerComponent,
     DialogComponent,
-    ProductComponent
+    ProductComponent,
+    SellerDetailsComponent
   ],
   imports: [
     BrowserModule,
