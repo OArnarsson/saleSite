@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ProductService } from '../apiServices/product.service';
 import { Product } from '../classes/product';
 import { Tab } from '../classes/tab';
+import { throttleTime } from "rxjs/operator/throttleTime";
 
 @Component({
   selector: 'app-product',
@@ -16,9 +17,11 @@ export class ProductComponent implements OnInit {
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
-    let x = new Tab('Products', []);
+    let def = new Tab('Products', []);
+    let top10 = new Tab('Top 10', []);
     this.tabs = [];
-    this.tabs.push(x);
+    this.tabs.push(def);
+    this.tabs.push(top10);
     this.productService.getProductsById(this.sellerId).subscribe(
         (products) => {
           this.tabs[0].products = products;

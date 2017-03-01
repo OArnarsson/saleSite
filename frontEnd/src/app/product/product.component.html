@@ -1,12 +1,20 @@
 <ngb-tabset>
   <div *ngFor="let tab of tabs">
 	<ngb-tab title="{{tab.title}}">
-	<!-- <template ngbTabTitle>{{tab.title}}</template> -->
-	<template ngbTabContent>
-	  <div *ngFor="let prod of tab.products">
-		<h1>{{prod.name}}</h1>
-	  </div>
-	</template>
-  </ngb-tab>
+	  <template ngbTabContent>
+		<div class="container">
+		  <div class="row">
+			<div class="card col-lg-3 col-md-6 col-sm-12" *ngFor="let prod of tab.products" style="margin-bottom: 15px">
+			  <img class="card-img-top img-fluid" src="{{prod.imagePath}}" onerror="this.src='http://placehold.it/238x200';" alt="http://placehold.it/238x200">
+			  <div class="card-block">
+				<h4 class="card-title">{{prod.name}}</h4>
+				<p class="card-title pull-left">price: {{prod.price}}</p>
+				<p class="card-text pull-right">Quantity: {{prod.quantityInStock}}</p>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </template>
+	</ngb-tab>
   </div>
 </ngb-tabset>
