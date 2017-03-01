@@ -16,7 +16,9 @@
       </thead>
       <tbody>
         <tr *ngFor="let seller of Sellers">
-          <td>{{seller.name}}</td>
+          <td [routerLink]="['seller', seller.id]"> 
+            <button type="button" class="btn btn-link">{{seller.name}}</button>
+          </td>
           <td>{{seller.category}}</td>
           <td><button class="btn btn-sm btn-secondary" (click)="editSeller(seller)"><i class="fa fa-cog" aria-hidden="true"></i></button></td>
         </tr>
