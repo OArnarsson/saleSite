@@ -7,20 +7,25 @@ import { AppComponent } from './app.component';
 import { SellerComponent } from './seller/seller.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { SellerService } from './apiServices/seller.service';
-import {ToastyModule} from 'ng2-toasty';
+import { ToastyModule } from 'ng2-toasty';
+import { ProductComponent } from './product/product.component';
+import { AppRoutingModule } from "./app.routing.module";
+
 
 @NgModule({
   declarations: [
     AppComponent,
     SellerComponent,
-    DialogComponent
+    DialogComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     NgbModule.forRoot(),
-    ToastyModule.forRoot()
+    ToastyModule.forRoot(),
+    AppRoutingModule
   ],
   providers: [SellerService],
   bootstrap: [AppComponent],
