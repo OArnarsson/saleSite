@@ -12,37 +12,32 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./seller-details.component.scss']
 })
 export class SellerDetailsComponent implements OnInit {
-  private sellerId: number;
+  public sellerId: number;
   public page = 1;
   public seller: Seller;
-  public products: Product[];
 
-  constructor(private productService: ProductService, private sellerService: SellerService, private router: ActivatedRoute) { }
+  constructor( private sellerService: SellerService, private router: ActivatedRoute) { }
 
   ngOnInit() {
-    this.products = [];
-    this.seller = new Seller(0,'','','');
     this.router.params.subscribe((params) => {
       this.sellerId = +params['id'];
-      console.log('got the param: ' + this.sellerId);
+      this.getInitData(this.sellerId);
     });
-    this.getInitData();
   }
 
-  getInitData() {
-    this.sellerService.getSingleSeller(this.sellerId).subscribe(
+  getInitData(sellerId: number) {
+    this.sellerService.getSingleSeller(sellerId).subscribe(
         (seller) => {
           this.seller = seller;
           console.log(JSON.stringify(this.seller));
         }
     );
-
-    this.productService.getProductsById(this.sellerId).subscribe(
-        (products) => {
-          this.products = products;
-          console.log(JSON.stringify(this.products));
-        }
-    )
+  }
+  getSellerId() {
+    if(this.sellerId){
+      return this.sellerId;
+    }
+    return null;
   }
 
 }

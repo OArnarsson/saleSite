@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ProductService } from '../apiServices/product.service';
+import { Product } from '../classes/product';
+import { Tab } from '../classes/tab';
 
 @Component({
   selector: 'app-product',
@@ -6,11 +9,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
-  page = 1;
+  @Input () sellerId: any;
+  public page = 1;
+  public tabs: Tab[];
 
-  constructor() { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit() {
+    let x = new Tab('Products', []);
+    this.tabs = [];
+    this.tabs.push(x);
+    this.productService.getProductsById(this.sellerId).subscribe(
+        (products) => {
+          this.tabs[0].products = products;
+          console.log(JSON.stringify(this.tabs[0].products));
+        }
+    )
   }
 
 }

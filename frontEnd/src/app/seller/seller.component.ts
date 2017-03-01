@@ -51,7 +51,7 @@ export class SellerComponent implements OnInit {
     })
   }
 
-  configHandler(){
+  configHandler() {
     this.successHandler = (data) => {
       this.updateUserList(data);
       this.addToast('Mission Complete!', `${data.name} has been saved`, 'success');

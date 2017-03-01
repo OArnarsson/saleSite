@@ -1,66 +1,12 @@
 <ngb-tabset>
-  <ngb-tab title="All products">
+  <div *ngFor="let tab of tabs">
+	<ngb-tab title="{{tab.title}}">
+	<!-- <template ngbTabTitle>{{tab.title}}</template> -->
 	<template ngbTabContent>
-
-	  <div class="container">
-		<div class="card-deck">
-		  <div class="row">
-			<div class="card">
-			  <img class="card-img-top" src="http://placehold.it/238x200" alt="Card image cap">
-			  <div class="card-block">
-				<p class="card-title pull-left">Grillbursti</p>
-				<p class="card-text pull-right">1.990 kr.</p>
-			  </div>
-			</div>
-			<div class="card ">
-			  <img class="card-img-top" src="http://placehold.it/238x200" alt="Card image cap">
-			  <div class="card-block">
-				<p class="card-title pull-left">Card title</p>
-				<p class="card-text pull-right">Last updated 3 mins ago</p>
-			  </div>
-			</div>
-			<div class="card ">
-			  <img class="card-img-top" src="http://placehold.it/238x200" alt="Card image cap">
-			  <div class="card-block">
-				<p class="card-title pull-left">Card title</p>
-				<p class="card-text pull-right">Last updated 3 mins ago</p>
-			  </div>
-			</div>
-		  </div>
-
-		  <div class="row">
-			<div class="card">
-			  <img class="card-img-top" src="http://placehold.it/238x200" alt="Card image cap">
-			  <div class="card-block">
-				<p class="card-title pull-left">Card title</p>
-				<p class="card-text pull-right">Last updated 3 mins ago</p>
-			  </div>
-			</div>
-			<div class="card ">
-			  <img class="card-img-top" src="http://placehold.it/238x200" alt="Card image cap">
-			  <div class="card-block">
-				<p class="card-title pull-left">Card title</p>
-				<p class="card-text pull-right">Last updated 3 mins ago</p>
-			  </div>
-			</div>
-			<div class="card ">
-			  <img class="card-img-top" src="http://placehold.it/238x200" alt="Card image cap">
-			  <div class="card-block">
-				<p class="card-title pull-left">Bingovél</p>
-				<p class="card-text pull-right">10.990 kr.</p>
-			  </div>
-			</div>
-		  </div>
-
-		  <!-- <ngb-pagination [collectionSize]="11" [(page)]="page"></ngb-pagination> -->
-
-		</div>
+	  <div *ngFor="let prod of tab.products">
+		<h1>{{prod.name}}</h1>
 	  </div>
 	</template>
   </ngb-tab>
-  <ngb-tab>
-	<template ngbTabTitle><b>Top 10</b></template>
-	<template ngbTabContent>
-	</template>
-  </ngb-tab>
+  </div>
 </ngb-tabset>

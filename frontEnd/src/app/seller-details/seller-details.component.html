@@ -1,5 +1,5 @@
 <section id="sellerDetails">
-  <div class="container">
+  <div class="container" *ngIf="seller">
     <div class="d-flex">
       <div class="sellerInfo">
         <img src="{{seller.imagePath}}" alt="" class="rounded">
@@ -12,10 +12,9 @@
         Add product &nbsp;<i class="fa fa-plus-square-o fa-1x" aria-hidden="true"></i>
       </button>
     </div>
-    <template></template>
+	<app-product [sellerId]="sellerId"></app-product>
   </div>
 </section>
-<ngb-tabset></ngb-tabset>
 <!-- This is the template where the modal is being injected! -->
 <template ngbModalContainer></template>
 <!-- This is for the Toast message -->
