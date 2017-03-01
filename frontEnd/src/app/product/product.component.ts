@@ -3,6 +3,7 @@ import { ProductService } from '../apiServices/product.service';
 import { Product } from '../classes/product';
 import { Tab } from '../classes/tab';
 import { throttleTime } from "rxjs/operator/throttleTime";
+import * as _ from "lodash";
 
 @Component({
   selector: 'app-product',
@@ -25,9 +26,13 @@ export class ProductComponent implements OnInit {
     this.productService.getProductsById(this.sellerId).subscribe(
         (products) => {
           this.tabs[0].products = products;
-          console.log(JSON.stringify(this.tabs[0].products));
+          this.tabs[1].products = this.getTop10();
         }
     )
+  }
+
+  getTop10(): Product[]{
+    return _.take((_.sortBy(this.tabs[0].products, [function(o) { return o.quantitySold; }])).reverse(), 10);
   }
 
 }
