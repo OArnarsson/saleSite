@@ -9,7 +9,6 @@
         <tr>
           <th>Seller name</th>
           <th>Category</th>
-          <th>Last update</th>
           <th></th>
         </tr>
       </thead>
@@ -17,7 +16,6 @@
         <tr *ngFor="let seller of Sellers">
           <td>{{seller.name}}</td>
           <td>{{seller.category}}</td>
-          <td>13:37</td>
           <td><button class="btn btn-sm btn-secondary" (click)="editSeller(seller)"><i class="fa fa-cog" aria-hidden="true"></i></button></td>
         </tr>
       </tbody>

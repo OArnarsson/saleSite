@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./seller-details.component.scss']
 })
 export class SellerDetailsComponent implements OnInit {
-
+  page = 1;
+  
   constructor() { }
 
   ngOnInit() {

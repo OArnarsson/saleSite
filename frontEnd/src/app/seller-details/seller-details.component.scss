@@ -1,0 +1,22 @@
+#sellerDetails {
+    h1 {
+        margin: 1rem 0;
+    }
+
+    ngb-tabset {
+        margin-top: 1rem;
+    }
+
+    .card-deck {
+        .row {
+            width: 100%;
+            padding: 1rem 0;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    ngb-pagination {
+        margin: auto;
+    }
+}
