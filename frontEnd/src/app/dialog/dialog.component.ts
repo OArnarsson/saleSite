@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { Seller } from '../classes/seller'
+import { Seller } from '../classes/seller';
+import { Product } from '../classes/product';
 
 @Component({
   selector: 'app-dialog',
@@ -10,6 +11,7 @@ import { Seller } from '../classes/seller'
 export class DialogComponent implements OnInit {
   private sellerCategories = ['Fatnaður', 'Skartgripir', 'Matvörur', 'Keramik'];
   public seller: Seller;
+  public product: Product;
   public title: string;
   public onOkButton: string;
   constructor(public modal: NgbActiveModal) {

@@ -2,7 +2,7 @@
   <div class="container" *ngIf="seller">
     <div class="d-flex">
       <div class="sellerInfo">
-        <img src="{{seller.imagePath}}" alt="" class="rounded">
+        <div class="image" [style.background]="'url(' + seller.imagePath +')'"></div>
         <div class="flex-column d-inline-flex">
           <h1 class="display-4">{{seller.name}}</h1>
           <h5>{{seller.category}}</h5>
