@@ -73,7 +73,6 @@ function findSellerById(id) {
 	var obj = _.find(sellers, seller => {
 		return seller.id === parseInt(id);
 	});
-    console.log('this is the obj:'+ JSON.stringify(obj));
 	return obj;
 }
 
@@ -125,14 +124,12 @@ app.put("/api/sellers/:id", (req, res) => {
 	// Check if we can find the seller:
 	var seller = findSellerById(req.params.id);
 	if (!seller) {
-	    console.log('im server 1');
 		res.statusCode = 404;
 		return res.send('Error 404: No seller found!');
 	}
 
 	// Validate data:
 	if (!req.body.name) {
-        console.log('im server 2');
 	    res.statusCode = 400;
 		return res.send('Error 400: Seller name is required!');
 	}

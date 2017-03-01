@@ -6,7 +6,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { SellerComponent } from './seller/seller.component';
 import { DialogComponent } from './dialog/dialog.component';
-import { SellerService } from "./apiServices/seller.service";
+import { SellerService } from './apiServices/seller.service';
+import {ToastyModule} from 'ng2-toasty';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SellerService } from "./apiServices/seller.service";
     FormsModule,
     HttpModule,
     NgbModule.forRoot(),
+    ToastyModule.forRoot()
   ],
   providers: [SellerService],
   bootstrap: [AppComponent],

@@ -15,10 +15,8 @@
 	  <div class="form-group row">
 		<label for="sellerCategory" class="col-sm-3 col-form-label">Category: </label>
 		<div class="col-sm-8">
-		  <select class="custom-select" id="sellerCategory">
-			<option selected value="1">Sporting equipment</option>
-			<option value="2">Jewelry</option>
-			<option value="3">Exotic animals</option>
+		  <select [(ngModel)]="seller.category" class="custom-select" id="sellerCategory"  name="categories">
+			<option *ngFor="let option of sellerCategories" [value]="option">{{option}}</option>
 		  </select>
 		</div>
 	  </div>

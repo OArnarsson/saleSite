@@ -3,6 +3,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DialogComponent } from '../dialog/dialog.component';
 import { Seller } from '../classes/seller';
 import { SellerService } from '../apiServices/seller.service';
+import { ToastyService, ToastyConfig, ToastOptions, ToastData } from 'ng2-toasty';
 import * as _ from "lodash";
 
 @Component({
@@ -11,23 +12,22 @@ import * as _ from "lodash";
   styleUrls: ['./seller.component.scss']
 })
 export class SellerComponent implements OnInit {
+  private errorHandler: any;
+  private successHandler: any;
 
-  closeResult: string;
   public Sellers: Seller[];
 
-  constructor(private modalService: NgbModal, private sellerService: SellerService) {
+  constructor(private modalService: NgbModal, private sellerService: SellerService, private toastyService: ToastyService, private toastyConfig: ToastyConfig) {
   }
 
   ngOnInit() {
     this.Sellers = []; // Construct the arr. in case of failure we wont get an error in the view.
-    this.sellerService.getSellers().subscribe(data => {
-      if (data) {
-        this.Sellers = data;
-      }
-      else {
-        console.log('Something terrible has happened to our server!');
-      }
-    });
+    this.configHandler();
+    this.sellerService.getSellers().subscribe(
+        (data) => {
+          this.Sellers = data;
+        },
+        this.errorHandler);
   }
 
   newSeller() {
@@ -45,7 +45,6 @@ export class SellerComponent implements OnInit {
     modal.componentInstance.onOkButton = okBut;
     modal.componentInstance.seller = seller;
     modal.result.then(obj => {
-      console.log(JSON.stringify(obj));
       this.addSellerToDb(obj, rest);
 
     }).catch(err => {
@@ -53,16 +52,31 @@ export class SellerComponent implements OnInit {
     })
   }
 
+  configHandler(){
+    this.successHandler = (data) => {
+      this.updateUserList(data);
+      this.addToast('Mission Complete!', `${data.name} has been saved`, 'success');
+    };
+    this.errorHandler = (err) => {
+      let msg = '';
+      if(err.status == 404){
+        msg = 'Damn.. Lost again!';
+      }else{
+        msg = 'Server fucked us..';
+      }
+      if(err.status == 0){
+        msg = 'Node server offline';
+      }
+      this.addToast(`Mission Failed ERROR ${err.status}`, msg, 'error');
+    };
+  }
+
   addSellerToDb(seller: Seller, rest: string) {
     if (rest === 'POST') {
-      this.sellerService.postSingleSeller(seller).subscribe(data => {
-        this.updateUserList(data);
-      });
-    }
+      this.sellerService.postSingleSeller(seller).subscribe(this.successHandler, this.errorHandler)
+    };
     if (rest === 'PUT') {
-      this.sellerService.putSingleSeller(seller).subscribe(data => {
-        this.updateUserList(data);
-      });
+      this.sellerService.putSingleSeller(seller).subscribe(this.successHandler, this.errorHandler);
     }
   }
 
@@ -72,10 +86,27 @@ export class SellerComponent implements OnInit {
     });
     if (obj > -1) {
       this.Sellers[obj] = newSeller;
-    }
-    else {
+    } else {
       this.Sellers.push(newSeller);
     }
-
   }
+
+  //Toaster msg
+  addToast(title: string, msg: string, code: string) {
+    const toastOptions: ToastOptions = {
+      title: title,
+      msg: msg,
+      showClose: true,
+      timeout: 5000,
+      theme: 'material',
+      onAdd: (toast: ToastData) => {},
+      onRemove: function (toast: ToastData) {}
+    };
+    if (code === 'success'){
+      this.toastyService.success(toastOptions);
+    } else {
+      this.toastyService.error(toastOptions);
+    }
+  }
+
 }
