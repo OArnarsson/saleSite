@@ -21,7 +21,12 @@ export class DialogComponent implements OnInit {
   }
 
   onOk() {
-    this.modal.close(this.seller);
+    if (this.seller) {
+      this.modal.close(this.seller);
+    }
+    else {
+      this.modal.close(this.product)
+    }
   }
 
   onCancel() {
