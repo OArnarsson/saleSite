@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbTabsetModule  } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { SellerComponent } from './seller/seller.component';
 import { DialogComponent } from './dialog/dialog.component';
@@ -11,6 +11,7 @@ import { ToastyModule } from 'ng2-toasty';
 import { ProductComponent } from './product/product.component';
 import { AppRoutingModule } from "./app.routing.module";
 import { SellerDetailsComponent } from './seller-details/seller-details.component';
+import { ProductService } from "./apiServices/product.service";
 
 
 @NgModule({
@@ -26,12 +27,13 @@ import { SellerDetailsComponent } from './seller-details/seller-details.componen
     FormsModule,
     HttpModule,
     NgbModule.forRoot(),
+    NgbTabsetModule.forRoot(),
     ToastyModule.forRoot(),
     AppRoutingModule
   ],
-  providers: [SellerService],
+  providers: [SellerService, ProductService],
   bootstrap: [AppComponent],
-  entryComponents: [DialogComponent]
+  entryComponents: [DialogComponent, ProductComponent]
 })
 export class AppModule {
 }

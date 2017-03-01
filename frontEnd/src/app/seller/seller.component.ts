@@ -36,6 +36,7 @@ export class SellerComponent implements OnInit {
   }
 
   editSeller(seller: Seller) {
+    console.log('trying to edit: ' + seller);
     this.popModal('Edit seller', 'Save', new Seller(seller.id, seller.name, seller.category, seller.imagePath), 'PUT');
   }
 

@@ -2,86 +2,21 @@
   <div class="container">
     <div class="d-flex">
       <div class="sellerInfo">
-        <img src="http://placehold.it/150x150" alt="" class="rounded">
+        <img src="{{seller.imagePath}}" alt="" class="rounded">
         <div class="flex-column d-inline-flex">
-          <h1 class="display-4">Seller name</h1>
-          <h5>Category</h5>
+          <h1 class="display-4">{{seller.name}}</h1>
+          <h5>{{seller.category}}</h5>
         </div>
       </div>
       <button type="button" class="btn btn-primary addButt" (click)="newProduct()">
         Add product &nbsp;<i class="fa fa-plus-square-o fa-1x" aria-hidden="true"></i>
       </button>
     </div>
-    <ngb-tabset>
-      <ngb-tab title="All products">
-        <template ngbTabContent>
-
-          <div class="container">
-            <div class="card-deck">
-              <div class="row">
-                <div class="card">
-                  <img class="card-img-top" src="http://placehold.it/238x200" alt="Card image cap">
-                  <div class="card-block">
-                    <p class="card-title pull-left">Grillbursti</p>
-                    <p class="card-text pull-right">1.990 kr.</p>
-                  </div>
-                </div>
-                <div class="card ">
-                  <img class="card-img-top" src="http://placehold.it/238x200" alt="Card image cap">
-                  <div class="card-block">
-                    <p class="card-title pull-left">Card title</p>
-                    <p class="card-text pull-right">Last updated 3 mins ago</p>
-                  </div>
-                </div>
-                <div class="card ">
-                  <img class="card-img-top" src="http://placehold.it/238x200" alt="Card image cap">
-                  <div class="card-block">
-                    <p class="card-title pull-left">Card title</p>
-                    <p class="card-text pull-right">Last updated 3 mins ago</p>
-                  </div>
-                </div>
-              </div>
-
-
-              <div class="row">
-                <div class="card">
-                  <img class="card-img-top" src="http://placehold.it/238x200" alt="Card image cap">
-                  <div class="card-block">
-                    <p class="card-title pull-left">Card title</p>
-                    <p class="card-text pull-right">Last updated 3 mins ago</p>
-                  </div>
-                </div>
-                <div class="card ">
-                  <img class="card-img-top" src="http://placehold.it/238x200" alt="Card image cap">
-                  <div class="card-block">
-                    <p class="card-title pull-left">Card title</p>
-                    <p class="card-text pull-right">Last updated 3 mins ago</p>
-                  </div>
-                </div>
-                <div class="card ">
-                  <img class="card-img-top" src="http://placehold.it/238x200" alt="Card image cap">
-                  <div class="card-block">
-                    <p class="card-title pull-left">Bingovél</p>
-                    <p class="card-text pull-right">10.990 kr.</p>
-                  </div>
-                </div>
-              </div>
-
-              <ngb-pagination [collectionSize]="11" [(page)]="page"></ngb-pagination>
-
-            </div>
-          </div>
-        </template>
-      </ngb-tab>
-      <ngb-tab>
-        <template ngbTabTitle><b>Top 10</b></template>
-        <template ngbTabContent>
-        </template>
-      </ngb-tab>
-    </ngb-tabset>
+    <template></template>
   </div>
 </section>
-<ng2-toasty></ng2-toasty>
-<!-- This is for the Toast message -->
-<template ngbModalContainer></template>
+<ngb-tabset></ngb-tabset>
 <!-- This is the template where the modal is being injected! -->
+<template ngbModalContainer></template>
+<!-- This is for the Toast message -->
+<ng2-toasty></ng2-toasty>
