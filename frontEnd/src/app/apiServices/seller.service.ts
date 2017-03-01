@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable'
-import { SellerIface } from '../interfaces/seller-iface'
+import { SellerIface } from '../interfaces/seller-iface';
 
 import 'rxjs/rx';
 
@@ -43,7 +43,5 @@ export class SellerService {
           return <SellerIface> res.json();
         })
   };
-
-
 
 }
