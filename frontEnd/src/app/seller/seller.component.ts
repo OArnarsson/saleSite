@@ -31,23 +31,21 @@ export class SellerComponent implements OnInit {
   }
 
   newSeller() {
-    let newSeller = new Seller(0, '', '', '');
-    this.popModal('Create a new seller', 'Create', newSeller, 'POST');
+    this.popModal('Create a new seller', 'Create', new Seller(0, '', '', ''), 'POST');
   }
 
   editSeller(seller: Seller) {
-    console.log('trying to edit: ' + seller);
-    this.popModal('Edit seller', 'Save', new Seller(seller.id, seller.name, seller.category, seller.imagePath), 'PUT');
+    this.popModal('Edit seller', 'Save', seller, 'PUT');
   }
 
   popModal(title: string, okBut: string, seller: Seller, rest: string) {
+    const newSeller = seller;
     const modal = this.modalService.open(DialogComponent);
     modal.componentInstance.title = title;
     modal.componentInstance.onOkButton = okBut;
-    modal.componentInstance.seller = seller;
+    modal.componentInstance.seller = newSeller;
     modal.result.then(obj => {
       this.addSellerToDb(obj, rest);
-
     }).catch(err => {
       console.log(err);
     })
