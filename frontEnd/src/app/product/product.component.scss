@@ -1,28 +1,4 @@
-#products {
-    .d-flex {
-        margin: 1rem 0;
-        flex-wrap: wrap;
-        
-        h1 {
-            padding: 0;
-            flex-grow: 1;
-        }
-    }
-
-    ngb-tabset {
-        margin-top: 1rem;
-    }
-
-    .card-deck {
-        .row {
-            width: 100%;
-            padding: 1rem 0;
-            display: flex;
-            justify-content: space-between;
-        }
-    }
-
-    ngb-pagination {
-        margin: auto;
-    }
+.imageFit {
+    height: 200px;
+    object-fit: cover;
 }
