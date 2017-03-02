@@ -6,6 +6,7 @@
         <div class="flex-column d-inline-flex">
           <h1 class="display-4">{{seller.name}}</h1>
           <h5>{{seller.category}}</h5>
+          <p>{{prodComponent.tabs[0].products.length}} products available</p>
         </div>
       </div>
       <button type="button" class="btn btn-primary addButt" (click)="prodComponent.newProduct()">
