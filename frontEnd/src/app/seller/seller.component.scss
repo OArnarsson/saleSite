@@ -10,17 +10,21 @@
     }
     
     table {
-        margin-top: 1rem;
-    }
-    
-    tr {
-        td:first-child {
-            button {
-                padding: 0;
+        margin-top: 1rem;    
+        tr {
+            td:first-child {
+                button {
+                    padding: 0;
+                }
             }
-        }
-        td:last-child {
-            text-align: right;
+            td:last-child {
+                text-align: right;
+            }
+            &:last-child {
+                &:hover {
+                    background-color: white;
+                }
+            }
         }
     }
 
