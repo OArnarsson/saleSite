@@ -1,21 +1,22 @@
 <ngb-tabset>
-  <div *ngFor="let tab of tabs">
-	<ngb-tab title="{{tab.title}}">
-	  <template ngbTabContent>
-		<div class="container">
-		  <div class="row">
-			<div class="card col-lg-3 col-md-6 col-sm-12" *ngFor="let prod of tab.products" style="margin-bottom: 15px">
-			  <img class="card-img-top img-fluid" src="{{prod.imagePath}}" onerror="this.src='http://placehold.it/238x200';" alt="http://placehold.it/238x200">
-			  <div class="card-block">
-				<h4 class="card-title">{{prod.name}}</h4>
-				<p class="card-title pull-left">price: {{prod.price}}</p>
-				<p class="card-text pull-right">inStock: {{prod.quantityInStock}}</p>
-				<p class="card-title"> soldItems: {{prod.quantitySold}}</p>
-			  </div>
-			</div>
-		  </div>
-		</div>
-	  </template>
-	</ngb-tab>
-  </div>
+	<div *ngFor="let tab of tabs">
+		<ngb-tab title="{{tab.title}}">
+			<template ngbTabContent>
+				<div class="container">
+					<div class="row">
+						<div class="card col-lg-3 col-md-6 col-sm-12" *ngFor="let prod of tab.products" style="margin-bottom: 15px">
+							<img class="card-img-top img-fluid" src="{{prod.imagePath}}" onerror="this.src='http://placehold.it/238x200';" alt="http://placehold.it/238x200">
+							<div class="card-block">
+								<h4 class="card-title">{{prod.name}}</h4>
+								<p class="card-title pull-left">price: {{prod.price}}</p>
+								<p class="card-text pull-right">inStock: {{prod.quantityInStock}}</p>
+								<p class="card-title"> soldItems: {{prod.quantitySold}}</p>
+								<button class="btn btn-sm btn-secondary" (click)="editProduct(prod)"><i class="fa fa-cog" aria-hidden="true"></i></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</template>
+		</ngb-tab>
+	</div>
 </ngb-tabset>

@@ -10,14 +10,30 @@ export class ProductService {
   private baseUrl: string;
 
   constructor(private http: Http) {
-    this.baseUrl = 'http://localhost:5000/api/sellers';
+    this.baseUrl = 'http://localhost:5000/api/sellers/';
   }
 
   // Get list of products by a given seller:
   getProductsById(id: number): Observable<ProductIface[]> {
-    return this.http.get(`${this.baseUrl}/${id}/products`)
-        .map(res => {
-          return <ProductIface[]> res.json();
-        })
+    return this.http.get(`${this.baseUrl}${id}/products`)
+      .map(res => {
+        return <ProductIface[]>res.json();
+      })
+  };
+
+  // Edit single Product
+  postSingleProduct(product: any): Observable<ProductIface> {
+    return this.http.post(`${this.baseUrl}${product.id}/products`, product)
+      .map(res => {
+        return <ProductIface>res.json();
+      })
+  };
+
+  // Edit single Product
+  putSingleProduct(sID: any, product: any): Observable<ProductIface> {
+    return this.http.put(`${this.baseUrl}${sID}/products/${product.id}`, product)
+      .map(res => {
+        return <ProductIface>res.json();
+      })
   };
 }
