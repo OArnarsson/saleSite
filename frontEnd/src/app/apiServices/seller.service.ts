@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { Observable } from 'rxjs/Observable'
+import { Observable } from 'rxjs/Observable';
 import { SellerIface } from '../interfaces/seller-iface';
 import 'rxjs/rx';
 
@@ -18,7 +18,7 @@ export class SellerService {
     return this.http.get(`${this.baseUrl}`)
       .map(res => {
         return <SellerIface[]>res.json();
-      })
+      });
   };
 
   // Get one Seller
@@ -26,7 +26,7 @@ export class SellerService {
     return this.http.get(`${this.baseUrl}${id}`)
       .map(res => {
         return <SellerIface>res.json();
-      })
+      });
   };
 
   // Post single Seller
@@ -34,15 +34,15 @@ export class SellerService {
     return this.http.post(`${this.baseUrl}`, seller)
       .map(res => {
         return <SellerIface>res.json();
-      })
+      });
   };
-  
+
   // Edit single Seller
   putSingleSeller(seller: any): Observable<SellerIface> {
     return this.http.put(`${this.baseUrl}${seller.id}`, seller)
       .map(res => {
         return <SellerIface>res.json();
-      })
+      });
   };
 
 }

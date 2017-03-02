@@ -4,7 +4,7 @@ import { DialogComponent } from '../dialog/dialog.component';
 import { Seller } from '../classes/seller';
 import { SellerService } from '../apiServices/seller.service';
 import { ToastyService, ToastyConfig, ToastOptions, ToastData } from 'ng2-toasty';
-import * as _ from "lodash";
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-seller',
@@ -47,7 +47,7 @@ export class SellerComponent implements OnInit {
       this.addSellerToDb(obj, rest);
     }).catch(err => {
       console.log(err);
-    })
+    });
   }
 
   configHandler() {
@@ -71,7 +71,7 @@ export class SellerComponent implements OnInit {
 
   addSellerToDb(seller: Seller, rest: string) {
     if (rest === 'POST') {
-      this.sellerService.postSingleSeller(seller).subscribe(this.successHandler, this.errorHandler)
+      this.sellerService.postSingleSeller(seller).subscribe(this.successHandler, this.errorHandler);
     };
     if (rest === 'PUT') {
       this.sellerService.putSingleSeller(seller).subscribe(this.successHandler, this.errorHandler);
@@ -80,7 +80,7 @@ export class SellerComponent implements OnInit {
 
   updateUserList(newSeller: Seller) {
     let obj = _.findIndex(this.Sellers, seller => {
-      return seller.id === newSeller.id
+      return seller.id === newSeller.id;
     });
     if (obj > -1) {
       this.Sellers[obj] = newSeller;
@@ -89,7 +89,7 @@ export class SellerComponent implements OnInit {
     }
   }
 
-  //Toaster msg
+  // Toaster msg
   addToast(title: string, msg: string, code: string) {
     const toastOptions: ToastOptions = {
       title: title,

@@ -4,9 +4,9 @@ import { Product } from '../classes/product';
 import { DialogComponent } from '../dialog/dialog.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Tab } from '../classes/tab';
-import { throttleTime } from "rxjs/operator/throttleTime";
+import { throttleTime } from 'rxjs/operator/throttleTime';
 import { ToastyService, ToastyConfig, ToastOptions, ToastData } from 'ng2-toasty';
-import * as _ from "lodash";
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-product',
@@ -41,18 +41,21 @@ export class ProductComponent implements OnInit {
     this.popModal('Edit product', 'Save', product, 'PUT');
   }
 
+  newProduct() {
+    this.popModal('Create a new product', 'Create', new Product(this.sellerId, 9, '', 0, 0, 0, ''), 'POST');
+  }
+
   updateProductList(newProduct: Product) {
-    let obj = _.findIndex(this.tabs[0].products, products => {      
-      return products.id === newProduct.product.id
+    let obj = _.findIndex(this.tabs[0].products, product => {
+      return product.id === newProduct.product.id;
     });
     console.log(obj);
-    console.log(this.tabs[0].products[obj]);
-    console.log(newProduct.product);
-    
+    console.log(this.tabs[0].products[obj], newProduct);
+
     if (obj > -1) {
-      this.tabs[0].products[obj] = newProduct;
+      this.tabs[0].products[obj] = newProduct.product;
     } else {
-      this.tabs[0].products.push(newProduct);
+      this.tabs[0].products.push(newProduct.product);
     }
   }
 
@@ -66,7 +69,7 @@ export class ProductComponent implements OnInit {
       this.addProductToDb(obj, rest);
     }).catch(err => {
       console.log(err);
-    })
+    });
   }
 
   configHandler() {
@@ -92,13 +95,16 @@ export class ProductComponent implements OnInit {
     if (rest === 'PUT') {
       this.productService.putSingleProduct(this.sellerId, product).subscribe(this.successHandler, this.errorHandler);
     }
+    if (rest === 'POST') {
+      this.productService.postSingleProduct(product).subscribe(this.successHandler, this.errorHandler);
+    };
   }
 
   getTop10(): Product[] {
     return _.take((_.sortBy(this.tabs[0].products, [function (o) { return o.quantitySold; }])).reverse(), 10);
   }
 
-  //Toaster msg
+  // Toaster msg
   addToast(title: string, msg: string, code: string) {
     const toastOptions: ToastOptions = {
       title: title,

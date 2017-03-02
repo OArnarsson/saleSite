@@ -18,7 +18,7 @@ export class ProductService {
     return this.http.get(`${this.baseUrl}${id}/products`)
       .map(res => {
         return <ProductIface[]>res.json();
-      })
+      });
   };
 
   // Edit single Product
@@ -26,7 +26,7 @@ export class ProductService {
     return this.http.post(`${this.baseUrl}${product.id}/products`, product)
       .map(res => {
         return <ProductIface>res.json();
-      })
+      });
   };
 
   // Edit single Product
@@ -34,6 +34,6 @@ export class ProductService {
     return this.http.put(`${this.baseUrl}${sID}/products/${product.id}`, product)
       .map(res => {
         return <ProductIface>res.json();
-      })
+      });
   };
 }

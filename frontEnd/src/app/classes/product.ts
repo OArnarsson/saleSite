@@ -1,4 +1,3 @@
-
 export class Product {
     id: number;
     product: {
@@ -8,7 +7,7 @@ export class Product {
         quantitySold: number;
         quantityInStock: number;
         imagePath: string;
-    }
+    };
 
     constructor(id, pId, name, price, quantitySold, quantityInStock, imagePath) {
         this.id = id;
