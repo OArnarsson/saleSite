@@ -1,7 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import './variables.scss';
+
+body {
+    background: $primary-color;
+    color: #FAFAFA;
+}
+
+.card {
+    background: $secondary-color;
+}
+
 .addButt {
     height: 40px;
     align-self: center;
+    background: $yellow-color;
+    border-color: darken($yellow-color,  10%);
+    &:hover {
+        background: lighten($yellow-color, 10%);
+        border-color: lighten($yellow-color,  10%);
+    }
 }
 
 .togglerLeft {
@@ -18,4 +35,18 @@
 
 .fadeIn {
     opacity: 0;
+}
+
+a {
+    color: #FAFAFA;
+    &:hover {
+        color: white;
+    }
+}
+
+.btn.btn-link {
+    color: $yellow-color;
+    &:hover {
+        color: lighten($yellow-color, 10%);
+    }
 }

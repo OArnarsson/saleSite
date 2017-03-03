@@ -1,4 +1,23 @@
+@import '../../variables.scss';
+
 .imageFit {
     height: 200px;
     object-fit: cover;
+}
+
+.container {
+    background: white;
+}
+
+.badge-danger {
+    background: $red-accent-color;
+}
+
+.badge-warning {
+    background: $yellow-color;
+}
+
+.tabSet {
+    background: $secondary-color;
+    color: red!important;
 }

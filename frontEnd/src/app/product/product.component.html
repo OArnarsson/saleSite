@@ -4,29 +4,31 @@
 			<template ngbTabContent>
 				<div class="container">
 					<div [@slide]="slide" class="row togglerRight">
-						<div class="card col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12" *ngFor="let prod of tab.products" style="margin-bottom: 15px">
-							<img class="card-img-top imageFit" src="{{prod.imagePath}}" onerror="this.src='http://placehold.it/238x200';" alt="http://placehold.it/238x200">
-							<div class="card-block">
-								<h4 class="card-title">
-									{{prod.name}}
-									<button class="btn btn-sm btn-secondary pull-right" (click)="editProduct(prod)"><i class="fa fa-cog" aria-hidden="true"></i></button>
-								</h4>
-								<div class="d-flex-col">
-									<div class="d-flex justify-content-between">
-										<p class="card-title">Price: {{prod.price}}</p>
-										<p class="card-text ">In stock: {{prod.quantityInStock}}</p>
-									</div>
-									<div class="d-flex justify-content-between">
-										<p class="card-title pull-left"> Items sold: {{prod.quantitySold}}</p>
-										<p *ngIf="prod.quantityInStock < 1" class="badge badge-danger pull-right">Sold out</p>
-										<p *ngIf="prod.quantityInStock < 5 && prod.quantityInStock > 0" class="badge badge-warning pull-right">Low stock!</p>
+						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12" *ngFor="let prod of tab.products" style="margin: 15px 0">
+							<div class="card">
+								<img class="card-img-top imageFit" src="{{prod.imagePath}}" onerror="this.src='http://placehold.it/238x200';" alt="http://placehold.it/238x200">
+								<div class="card-block">
+									<h4 class="card-title">
+										{{prod.name}}
+										<button class="btn btn-sm btn-secondary pull-right" (click)="editProduct(prod)"><i class="fa fa-cog" aria-hidden="true"></i></button>
+									</h4>
+									<div class="d-flex-col">
+										<div class="d-flex justify-content-between">
+											<p class="card-title">Price: {{prod.price}}</p>
+											<p class="card-text ">In stock: {{prod.quantityInStock}}</p>
+										</div>
+										<div class="d-flex justify-content-between">
+											<p class="card-title pull-left"> Items sold: {{prod.quantitySold}}</p>
+											<p *ngIf="prod.quantityInStock < 1" class="badge badge-danger pull-right">Sold out</p>
+											<p *ngIf="prod.quantityInStock < 5 && prod.quantityInStock > 0" class="badge badge-warning pull-right">Low stock!</p>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
+						</div>
 					</div>
-				</div>
 			</template>
 		</ngb-tab>
-	</div>
+		</div>
 </ngb-tabset>

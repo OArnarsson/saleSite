@@ -1,3 +1,5 @@
+@import '../../variables.scss';
+
 #sellers {
     .d-flex {
         margin: 1rem 0;
@@ -7,6 +9,11 @@
             padding: 0;
             flex-grow: 1;
         }
+    }
+
+    .container {
+        background: $secondary-color;
+        border-radius: 5px;
     }
     
     table {
@@ -22,7 +29,7 @@
             }
             &:last-child {
                 &:hover {
-                    background-color: white;
+                    background-color: $secondary-color;
                 }
             }
         }

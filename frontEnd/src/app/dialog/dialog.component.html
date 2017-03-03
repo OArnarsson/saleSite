@@ -1,4 +1,4 @@
-<div *ngIf="seller">
+<div class="modalContainer" *ngIf="seller">
 	<div class="modal-header">
 		<h4 class="modal-title">{{title}}</h4>
 		<button type="button" class="close" aria-label="Close" (click)="onCancel()">
@@ -35,7 +35,7 @@
 	</form>
 </div>
 
-<div *ngIf="product">
+<div class="modalContainer" *ngIf="product">
 	<div class="modal-header">
 		<h4 class="modal-title">{{title}}</h4>
 		<button type="button" class="close" aria-label="Close" (click)="onCancel()">

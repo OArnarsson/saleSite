@@ -1,0 +1,9 @@
+@import '../../variables.scss';
+
+.modalContainer {
+    background: $primary-color;
+
+    span {
+        color: white;
+    }
+}
