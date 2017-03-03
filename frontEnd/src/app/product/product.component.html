@@ -1,39 +1,44 @@
 <ngb-tabset>
-	<div *ngFor="let tab of tabs">
-		<ngb-tab title="{{tab.title}}">
-			<template ngbTabContent>
-				<div class="container ">
-					<div class="row">
-						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12" *ngFor="let prod of tab.products" style="margin: 15px 0">
-							<div [@slide]="slide" class="card fadeIn">
-								<!--Ribbon-->
-								<div *ngIf="prod.quantitySold < 50" class="ribbon-wrapper">
-									<div class="ribbon">New!</div>
-								</div>
-								<!--//Ribbon-->
-								<img class="card-img-top imageFit" src="{{prod.imagePath}}" onerror="this.src='http://placehold.it/238x200';" alt="http://placehold.it/238x200">
-								<div class="card-block">
-									<h4 class="card-title">
-										{{prod.name}}
-										<button class="btn btn-sm btn-secondary pull-right" (click)="editProduct(prod)"><i class="fa fa-cog" aria-hidden="true"></i></button>
-									</h4>
-									<div class="d-flex-col">
-										<div class="d-flex justify-content-between">
-											<p class="card-title">Price: {{prod.price}}</p>
-											<p class="card-text ">In stock: {{prod.quantityInStock}}</p>
-										</div>
-										<div class="d-flex justify-content-between">
-											<p *ngIf="prod.quantitySold > 100" class="badge badge-success pull-left">100+ sold</p>
-											<p *ngIf="prod.quantityInStock < 1" class="badge badge-danger pull-right">Sold out</p>
-											<p *ngIf="prod.quantityInStock < 5 && prod.quantityInStock > 0" class="badge badge-warning pull-right">Low stock!</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+  <div *ngFor="let tab of tabs">
+	<ngb-tab title="{{tab.title}}">
+	  <template ngbTabContent>
+		<div class="container ">
+		  <div class="row">
+			<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12" *ngFor="let prod of tab.products"
+				 style="margin: 15px 0">
+			  <div [@slide]="slide" class="card fadeIn">
+				<!--Ribbon-->
+				<div *ngIf="prod.quantitySold < 50" class="ribbon-wrapper">
+				  <div class="ribbon">New!</div>
 				</div>
-			</template>
-		</ngb-tab>
-	</div>
+				<!--//Ribbon-->
+				<img class="card-img-top imageFit" src="{{prod.imagePath}}"
+					 onerror="this.src='http://placehold.it/238x200';" alt="http://placehold.it/238x200">
+				<div class="card-block">
+				  <h4 class="card-title">
+					{{prod.name}}
+					<button class="btn btn-sm btn-secondary pull-right" (click)="editProduct(prod)"><i class="fa fa-cog"
+																									   aria-hidden="true"></i>
+					</button>
+				  </h4>
+				  <div class="d-flex justify-content-between">
+					<div class="d-flex flex-column justify-content-center">
+					  <h5 class="card-title">{{prod.price}} ISK.</h5>
+					</div>
+					<div class="d-flex flex-column justify-content-center">
+					  <p *ngIf="prod.quantitySold > 100" class="badge badge-success pull-left">100+ sold</p>
+					  <p *ngIf="prod.quantityInStock < 1" class="badge badge-danger pull-right">Sold out</p>
+					  <p *ngIf="prod.quantityInStock < 5 && prod.quantityInStock > 0"
+						 class="badge badge-warning pull-right">Low stock!
+					  </p>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </template>
+	</ngb-tab>
+  </div>
 </ngb-tabset>
