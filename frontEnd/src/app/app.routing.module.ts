@@ -8,7 +8,6 @@ import { SellerDetailsComponent } from './seller-details/seller-details.componen
 const appRoutes: Routes = [
     { path: '', component: SellerComponent },
     { path: 'seller/:id', component: SellerDetailsComponent },
-    { path: 'product', component: ProductComponent },
     { path: '**', component: SellerComponent }
 ];
 

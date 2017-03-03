@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+  nav: boolean;
+
+  toggleNav() {
+    if (this.nav) {
+      this.nav = false;
+    } else {
+      this.nav = true;
+    }
+  }
 }
