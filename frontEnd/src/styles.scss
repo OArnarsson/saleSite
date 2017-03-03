@@ -6,10 +6,6 @@ body {
     color: #FAFAFA;
 }
 
-.card {
-    background: $secondary-color;
-}
-
 .addButt {
     height: 40px;
     align-self: center;
@@ -18,6 +14,23 @@ body {
     &:hover {
         background: lighten($yellow-color, 10%);
         border-color: lighten($yellow-color,  10%);
+    }
+}
+
+ul.nav-tabs.justify-content-start {
+    border: none;
+    li {
+        .active {
+            background: $secondary-color;
+            color: white;
+            border: solid 1px $secondary-color;
+            border-top-left-radius: 0;
+        }
+        
+        border: solid 1px $secondary-color;
+        background: $primary-color;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 0;
     }
 }
 

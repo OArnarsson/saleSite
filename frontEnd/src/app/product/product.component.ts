@@ -15,9 +15,9 @@ import * as _ from 'lodash';
   animations: [
     trigger('slide', [
       state('active', style({
-        transform: 'translateY(0%)'
+        opacity: '1'
       })),
-      transition('* => active', animate('1000ms ease'))
+      transition('* => active', animate('3500ms ease'))
     ])
   ]
 })

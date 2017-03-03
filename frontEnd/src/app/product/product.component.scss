@@ -6,7 +6,8 @@
 }
 
 .container {
-    background: white;
+    background: $secondary-color;
+    border-top-right-radius: 5px;
 }
 
 .badge-danger {
@@ -20,4 +21,33 @@
 .tabSet {
     background: $secondary-color;
     color: red!important;
+}
+
+.card {
+    height: 100%;
+    background: $primary-color;
+    .card-block {
+        padding: 0.75rem 0.75rem;
+    }
+}
+
+.ribbon-wrapper {
+  /* background-color: blue; */
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+
+.ribbon{
+  background-color: $accent-color;
+  text-align: center;
+  transform: rotate(-45deg);
+  position: relative;
+  padding: 3px 0;
+  left: -30px;
+  top: 15px;
+  width: 120px;
 }

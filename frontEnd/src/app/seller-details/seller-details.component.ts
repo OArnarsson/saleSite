@@ -9,15 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-seller-details',
   templateUrl: './seller-details.component.html',
-  styleUrls: ['./seller-details.component.scss'],
-  animations: [
-    trigger('slide', [
-      state('active', style({
-        transform: 'translateY(0%)'
-      })),
-      transition('* => active', animate('1000ms ease'))
-    ])
-  ]
+  styleUrls: ['./seller-details.component.scss']
 })
 export class SellerDetailsComponent implements OnInit {
   public sellerId: number;

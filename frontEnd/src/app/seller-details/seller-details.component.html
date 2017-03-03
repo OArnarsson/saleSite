@@ -1,9 +1,9 @@
 <section id="sellerDetails">
   <div class="container" *ngIf="seller">
-    <div [@slide]="slide" class="d-flex togglerLeft">
+    <div class="d-flex">
       <div class="sellerInfo">
         <div class="image" [style.background]="'url(' + seller.imagePath +')'"></div>
-        <div class="flex-column d-inline-flex">
+        <div class="flex-column d-inline-flex justify-content-center">
           <h1 class="display-4">{{seller.name}}</h1>
           <h5>{{seller.category}}</h5>
           <p>{{prodComponent.tabs[0].products.length}} registered products</p>
