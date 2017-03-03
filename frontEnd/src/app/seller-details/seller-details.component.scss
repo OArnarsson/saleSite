@@ -3,6 +3,10 @@
         margin: 1rem 0;
         padding-left: 0;
         flex-wrap: wrap;
+
+        .toggler {
+            transform: translateX(200%)
+        }
         
         .sellerInfo {
             height: 100%;

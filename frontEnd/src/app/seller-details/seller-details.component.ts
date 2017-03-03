@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, trigger, state, style, transition, animate, keyframes } from '@angular/core';
 import { Product } from '../classes/product';
 import { ProductService } from '../apiServices/product.service';
 import { SellerService } from '../apiServices/seller.service';
@@ -9,7 +9,15 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-seller-details',
   templateUrl: './seller-details.component.html',
-  styleUrls: ['./seller-details.component.scss']
+  styleUrls: ['./seller-details.component.scss'],
+  animations: [
+    trigger('slide', [
+      state('active', style({
+        transform: 'translateY(0%)'
+      })),
+      transition('* => active', animate('1000ms ease'))
+    ])
+  ]
 })
 export class SellerDetailsComponent implements OnInit {
   public sellerId: number;
@@ -17,6 +25,7 @@ export class SellerDetailsComponent implements OnInit {
   public seller: Seller;
   private errorHandler: any;
   private successHandler: any;
+  private slide: string;
 
   constructor(private productService: ProductService, private sellerService: SellerService, private router: ActivatedRoute) { }
 
@@ -25,6 +34,7 @@ export class SellerDetailsComponent implements OnInit {
       this.sellerId = +params['id'];
       this.getInitData(this.sellerId);
     });
+    this.slide = 'active';
   }
 
   getInitData(sellerId: number) {

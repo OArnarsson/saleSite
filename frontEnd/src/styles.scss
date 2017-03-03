@@ -3,3 +3,19 @@
     height: 40px;
     align-self: center;
 }
+
+.togglerLeft {
+    transform: translate(-150%);
+}
+
+.togglerRight {
+    transform: translate(150%);
+}
+
+.togglerTop {
+    transform: translateY(400%);
+}
+
+.fadeIn {
+    opacity: 0;
+}

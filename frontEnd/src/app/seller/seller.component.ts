@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, trigger, state, style, transition, animate, keyframes } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DialogComponent } from '../dialog/dialog.component';
 import { Seller } from '../classes/seller';
@@ -9,11 +9,20 @@ import * as _ from 'lodash';
 @Component({
   selector: 'app-seller',
   templateUrl: './seller.component.html',
-  styleUrls: ['./seller.component.scss']
+  styleUrls: ['./seller.component.scss'],
+  animations: [
+    trigger('fadeIn', [
+      state('active', style({
+        transform: 'translateY(0%)'
+      })),
+      transition('* => active', animate('1000ms ease'))
+    ])
+  ]
 })
 export class SellerComponent implements OnInit {
   private errorHandler: any;
   private successHandler: any;
+  private fade: string;
 
   public Sellers: Seller[];
 
@@ -28,6 +37,7 @@ export class SellerComponent implements OnInit {
         this.Sellers = data;
       },
       this.errorHandler);
+      this.fade = 'active';
   }
 
   newSeller() {

@@ -1,6 +1,6 @@
 <section id="sellerDetails">
   <div class="container" *ngIf="seller">
-    <div class="d-flex">
+    <div [@slide]="slide" class="d-flex togglerLeft">
       <div class="sellerInfo">
         <div class="image" [style.background]="'url(' + seller.imagePath +')'"></div>
         <div class="flex-column d-inline-flex">

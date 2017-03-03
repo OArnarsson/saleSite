@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, trigger, state, style, transition, animate, keyframes } from '@angular/core';
 import { ProductService } from '../apiServices/product.service';
 import { Product } from '../classes/product';
 import { DialogComponent } from '../dialog/dialog.component';
@@ -11,7 +11,15 @@ import * as _ from 'lodash';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss']
+  styleUrls: ['./product.component.scss'],
+  animations: [
+    trigger('slide', [
+      state('active', style({
+        transform: 'translateY(0%)'
+      })),
+      transition('* => active', animate('1000ms ease'))
+    ])
+  ]
 })
 export class ProductComponent implements OnInit {
   @Input() sellerId: any;
@@ -19,6 +27,7 @@ export class ProductComponent implements OnInit {
   public tabs: Tab[];
   private errorHandler: any;
   private successHandler: any;
+  private slide: string;
 
   constructor(private modalService: NgbModal, private productService: ProductService, private toastyService: ToastyService, private toastyConfig: ToastyConfig) { }
 
@@ -35,6 +44,7 @@ export class ProductComponent implements OnInit {
         this.tabs[1].products = this.getTop10();
       },
       this.errorHandler);
+      this.slide = 'active'
   }
 
   editProduct(product: Product) {
