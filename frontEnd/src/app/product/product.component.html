@@ -8,8 +8,8 @@
 				 style="margin: 15px 0">
 			  <div [@slide]="slide" class="card fadeIn">
 				<!--Ribbon-->
-				<div *ngIf="prod.quantitySold < 50" class="ribbon-wrapper">
-				  <div class="ribbon">New!</div>
+				<div *ngIf="tabs[1].products.indexOf(prod) > -1" class="ribbon-wrapper">
+				  <div class="ribbon">Top seller</div>
 				</div>
 				<!--//Ribbon-->
 				<img class="card-img-top imageFit" src="{{prod.imagePath}}"
