@@ -1,6 +1,5 @@
 import { Component, OnInit, trigger, state, style, transition, animate, keyframes } from '@angular/core';
 import { Product } from '../classes/product';
-import { ProductService } from '../apiServices/product.service';
 import { SellerService } from '../apiServices/seller.service';
 import { ToastyService, ToastyConfig, ToastOptions, ToastData } from 'ng2-toasty';
 import { Seller } from '../classes/seller';
@@ -19,7 +18,7 @@ export class SellerDetailsComponent implements OnInit {
   private successHandler: any;
   private slide: string;
 
-  constructor(private productService: ProductService, private sellerService: SellerService, private router: ActivatedRoute) { }
+  constructor(private sellerService: SellerService, private router: ActivatedRoute) { }
 
   ngOnInit() {
     this.router.params.subscribe((params) => {

@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule } from '@angular/forms';
 import { DialogComponent } from './dialog.component';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 describe('DialogComponent', () => {
   let component: DialogComponent;
@@ -8,9 +9,17 @@ describe('DialogComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DialogComponent ]
+      imports: [
+        FormsModule
+      ],
+      providers: [
+        NgbActiveModal
+      ],
+      declarations: [
+        DialogComponent
+      ]
     })
-    .compileComponents();
+        .compileComponents();
   }));
 
   beforeEach(() => {
