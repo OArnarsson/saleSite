@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { SellerDetailsComponent } from './seller-details.component';
-
+import { ReplaceSpecialPipe} from '../replace-special.pipe';
 // Constructor dependencies
 import { SellerService } from '../apiServices/seller.service';
 import { ProductComponent } from '../product/product.component';
@@ -73,7 +73,8 @@ describe('SellerDetailsComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         SellerDetailsComponent,
-        ProductComponent
+        ProductComponent,
+        ReplaceSpecialPipe
       ],
       imports: [
         ToastyModule,

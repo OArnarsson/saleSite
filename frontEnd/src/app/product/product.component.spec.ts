@@ -36,6 +36,18 @@ const mockService = {
         }
       }
     }
+  },
+  postSingleProduct: function (x) {
+    return {
+      subscribe: function (success, err) {
+        if (mockService.successGetProducts === true) {
+          success(mockService.products;
+        }
+        else {
+          err();
+        }
+      }
+    }
   }
 }
 
@@ -65,4 +77,14 @@ describe('ProductComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should return mocked response', () => {
+    let x = {};
+    mockService.postSingleProduct(x).subscribe((success) => {
+          expect(success.length === 2);
+        },
+        (err) => {}
+        );
+  });
+
 });
