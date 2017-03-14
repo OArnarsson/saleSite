@@ -69,6 +69,7 @@ const mockService = {
 describe('SellerDetailsComponent', () => {
   let component: SellerDetailsComponent;
   let fixture: ComponentFixture<SellerDetailsComponent>;
+  let pipe: ReplaceSpecialPipe;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -98,13 +99,16 @@ describe('SellerDetailsComponent', () => {
     fixture = TestBed.createComponent(SellerDetailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    pipe = new ReplaceSpecialPipe();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  it('should not be empty', () => {
-    expect(component.getInitData).toBeTruthy();
+  
+  it('should replace special characters', () => {
+    let string = pipe.transform('Fatnaður');
+    expect(string).toEqual('Fatnadur');
   });
+
 });

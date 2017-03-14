@@ -59,4 +59,10 @@ describe('SellerComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
+  it('should be size 3', () => {
+    expect(component.Sellers.length).toBe(3);
+  });
+
+
 });
