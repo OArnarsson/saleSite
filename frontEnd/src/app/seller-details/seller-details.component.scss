@@ -98,7 +98,7 @@
 @media (min-width: 0px) and (max-width: 576px) {
   #sellerSection {
     height: 200px!important;
-    justify-content: flex-start!important;
+    justify-content: flex-end!important;
     .tinyCon{
       width: 80%!important;
     }
@@ -118,7 +118,7 @@
 @media (min-width: 577px) and (max-width: 768px) {
   #sellerSection {
     height: 300px!important;
-    justify-content: flex-start!important;
+    justify-content: flex-end!important;
     .tinyCon{
       width: 60%!important;
     }

@@ -35,7 +35,7 @@
         <entry file="file://$PROJECT_DIR$/frontEnd/src/app/seller-details/seller-details.component.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="824">
-              <caret line="112" column="7" lean-forward="true" selection-start-line="112" selection-start-column="7" selection-end-line="112" selection-end-column="7" />
+              <caret line="118" column="18" lean-forward="true" selection-start-line="118" selection-start-column="18" selection-end-line="118" selection-end-column="18" />
               <folding>
                 <element signature="e#43#844#0" expanded="false" />
               </folding>
@@ -774,7 +774,7 @@
     <entry file="file://$PROJECT_DIR$/frontEnd/src/app/seller-details/seller-details.component.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="824">
-          <caret line="112" column="7" lean-forward="true" selection-start-line="112" selection-start-column="7" selection-end-line="112" selection-end-column="7" />
+          <caret line="118" column="18" lean-forward="true" selection-start-line="118" selection-start-column="18" selection-end-line="118" selection-end-column="18" />
           <folding>
             <element signature="e#43#844#0" expanded="false" />
           </folding>
