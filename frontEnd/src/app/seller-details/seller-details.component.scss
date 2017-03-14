@@ -99,6 +99,11 @@
   #sellerSection {
     height: 200px!important;
     justify-content: flex-end!important;
+    background-size: 50%!important;
+    background-position: bottom right!important;
+    .container{
+      width: 100%!important;
+    }
     .tinyCon{
       width: 80%!important;
     }
@@ -119,6 +124,9 @@
   #sellerSection {
     height: 300px!important;
     justify-content: flex-end!important;
+    .container{
+      width: 100%!important;
+    }
     .tinyCon{
       width: 60%!important;
     }
