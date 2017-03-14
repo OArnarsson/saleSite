@@ -10,7 +10,8 @@ export class ProductService {
   private baseUrl: string;
 
   constructor(private http: Http) {
-    this.baseUrl = 'http://localhost:5000/api/sellers/';
+    //this.baseUrl = 'http://localhost:5000/api/sellers/';
+    this.baseUrl = 'http://192.168.1.10:5000/api/sellers/';
   }
 
   // Get list of products by a given seller:

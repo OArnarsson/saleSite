@@ -10,7 +10,8 @@ export class SellerService {
   private baseUrl: string;
 
   constructor(private http: Http) {
-    this.baseUrl = 'http://localhost:5000/api/sellers/';
+    //this.baseUrl = 'http://localhost:5000/api/sellers/';
+    this.baseUrl = 'http://192.168.1.10:5000/api/sellers/';
   }
 
   // Get All sellers
