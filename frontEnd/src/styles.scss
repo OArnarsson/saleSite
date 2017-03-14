@@ -1,65 +1,111 @@
 /* You can add global styles to this file, and also import other style files */
 @import './variables.scss';
+//Font
+@font-face {
+  font-family: 'GardenFreude';
+  src: url('./assets/fonts/Gardenfreude.otf') format('truetype')
+}
+
+@font-face {
+  font-family: 'SixCaps';
+  src: url('./assets/fonts/SixCaps.ttf') format('truetype')
+}
+
+@font-face {
+  font-family: 'AmericanCaptain';
+  src: url('./assets/fonts/AmericanCaptain.otf') format('truetype')
+}
 
 body {
-    background: $primary-color;
-    color: #FAFAFA;
+  //background: $primary-color;
+  background-color: #FFFFFF;
+  color: #FAFAFA;
+  overflow-x: hidden;
 }
 
 .addButt {
-    height: 40px;
-    align-self: center;
-    background: $yellow-color;
-    border-color: darken($yellow-color,  10%);
-    &:hover {
-        background: lighten($yellow-color, 10%);
-        border-color: lighten($yellow-color,  10%);
-    }
+  height: 40px;
+  align-self: center;
+  background: $red-color;
+  border: none;
+  outline: none;
+  &:hover {
+    background: lighten($red-color, 7%);
+    cursor: pointer;
+  }
 }
 
 ul.nav-tabs.justify-content-start {
-    border: none;
-    li {
-        .active {
-            background: $secondary-color;
-            color: white;
-            border: solid 1px $secondary-color;
-            border-top-left-radius: 0;
-        }
-        
-        border: solid 1px $secondary-color;
-        background: $primary-color;
-        border-top-right-radius: 5px;
-        border-top-left-radius: 0;
+  border: none;
+  li.nav-item{
+    .nav-link{
+      color: #333333;
+      font-family: 'SixCaps';
+      font-size: 3em;
+      padding: 0.5em 1em 0.5em 0em;
+      transition: all 0.3s ease;
+      border: solid 1px #FFFFFF;
+      border-top-left-radius: 0;
+      &:hover{
+        color: $red-color;
+        text-decoration: line-through;
+      }
     }
+    .active{
+      //background: $secondary-color;
+      color: $red-color;
+      text-decoration: line-through;
+      //border: solid 1px $secondary-color;
+      border: solid 1px #FFFFFF;
+      border-top-left-radius: 0;
+    }
+
+    //border: solid 1px $secondary-color;
+    border: solid 1px #FFFFFF;
+    //background: $primary-color;
+    //border-top-right-radius: 5px;
+    border-top-left-radius: 0;
+  }
 }
 
 .togglerLeft {
-    transform: translate(-150%);
+  transform: translate(-150%);
 }
 
 .togglerRight {
-    transform: translate(150%);
+  transform: translate(150%);
 }
 
 .togglerTop {
-    transform: translateY(400%);
+  transform: translateY(400%);
 }
 
 .fadeIn {
-    opacity: 0;
+  opacity: 0;
 }
 
 a {
-    color: #FAFAFA;
-    &:hover {
-        color: white;
-    }
+  color: #FAFAFA;
+  &:hover {
+    color: white;
+  }
 }
 
 .btn.btn-link {
-    color: $yellow-color;
-    &:hover {
-        color: lighten($yellow-color, 10%);
-    }
+  color: $yellow-color;
+  &:hover {
+    color: lighten($yellow-color, 10%);
+  }
 }
+
+.container {
+  @media (min-width: 1450px) {
+    width: 1450px;
+    max-width: 100%;
+  }
+  @media (min-width: 1720px) {
+    width: 1580px;
+    max-width: 100%;
+  }
+}
+

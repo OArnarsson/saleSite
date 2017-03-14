@@ -1,3 +1,4 @@
+<!--
 <section id="sellerDetails">
   <div class="container" *ngIf="seller">
     <div class="d-flex">
@@ -16,6 +17,25 @@
     <app-product #prodComponent [sellerId]="sellerId"></app-product>
   </div>
 </section>
+ -->
+<section class="d-flex flex-column justify-content-center" *ngIf="seller" id="sellerSection"
+		 [ngStyle]="{'background-image':'url(' + seller.imagePath + ')'}">
+  <div class="container">
+	<div class="tinyCon">
+	  <h1 class="ellipses">{{seller.name}}</h1>
+	  <button type="button" class="btn btn-primary addButt" (click)="prodComponent.newProduct()">
+		Add Product &nbsp;<i class="fa fa-plus-square-o fa-1x" aria-hidden="true"></i>
+	  </button>
+	</div>
+  </div>
+  <div class="hugeTilted">
+	<h1>{{seller.category | replaceSpecial}}</h1>
+  </div>
+</section>
+<div class="container">
+  <app-product #prodComponent [sellerId]="sellerId"></app-product>
+</div>
+
 <!-- This is the template where the modal is being injected! -->
 <template ngbModalContainer></template>
 <!-- This is for the Toast message -->

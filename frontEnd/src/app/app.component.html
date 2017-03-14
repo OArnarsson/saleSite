@@ -1,16 +1,18 @@
-<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse" id="CleanNav">
   <button (click)="toggleNav()" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
     aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="navbar-toggler-icon" id="mobileNavBut"></span>
     </button>
-    <a class="navbar-brand" href="#">OnRi</a>
+  <div class="container">
+    <a class="navbar-brand" [routerLink]="['/']" [routerLinkActiveOptions]="{ exact: true }" [routerLinkActive]="['active']" id="brandName">OnRi</a>
     <div class="collapse navbar-collapse" [ngClass]="{show: nav}" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/']" [routerLinkActiveOptions]="{ exact: true }" [routerLinkActive]="['active']">Sellers</a>
+		  <!-- <a class="nav-link" [routerLink]="['/']" [routerLinkActiveOptions]="{ exact: true }" [routerLinkActive]="['active']">Sellers</a> -->
         </li>
       </ul>
     </div>
+  </div>
 </nav>
 
 <router-outlet></router-outlet>

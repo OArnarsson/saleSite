@@ -1,5 +1,21 @@
 @import '../variables.scss';
 
-.navbar.navbar-toggleable-md.navbar-inverse.bg-inverse {
-    background-color: $secondary-color!important;
+//.navbar.navbar-toggleable-md.navbar-inverse.bg-inverse {
+//    background-color: $secondary-color!important;
+//}
+
+#brandName {
+  font-size: 2rem;
+  font-family: 'GardenFreude';
+}
+
+#CleanNav {
+  background-color: #FFFFFF !important;
+  a {
+    color: #333333 !important;
+  }
+}
+
+#mobileNavBut {
+  color: #333333 !important;
 }

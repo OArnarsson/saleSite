@@ -12,6 +12,7 @@ import { ProductComponent } from './product/product.component';
 import { AppRoutingModule } from './app.routing.module';
 import { SellerDetailsComponent } from './seller-details/seller-details.component';
 import { ProductService } from './apiServices/product.service';
+import { ReplaceSpecialPipe } from './replace-special.pipe';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ProductService } from './apiServices/product.service';
     SellerComponent,
     DialogComponent,
     ProductComponent,
-    SellerDetailsComponent
+    SellerDetailsComponent,
+    ReplaceSpecialPipe,
   ],
   imports: [
     BrowserModule,

@@ -35,4 +35,7 @@ export class SellerDetailsComponent implements OnInit {
       }
     );
   }
+  getStyle(imgPath){
+    return "background-image: url('+imgPath+'); background-repeat: no-repeat; background-position: left";
+  }
 }

@@ -2,10 +2,9 @@
   <div *ngFor="let tab of tabs">
 	<ngb-tab title="{{tab.title}}">
 	  <template ngbTabContent>
-		<div class="container ">
-		  <div class="row">
-			<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12" *ngFor="let prod of tab.products"
-				 style="margin: 15px 0">
+		  <div class="mosaicCols">
+			<div class="col-xl-2 col-lg-3 col-md-6 col-sm-12 col-12 tinyBox" *ngFor="let prod of tab.products let inx=index"
+				 [ngClass]="{'col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 largePoster': inx===0 && tab.products.length > 9}">
 			  <div [@slide]="slide" class="card fadeIn">
 				<!--Ribbon-->
 				<div *ngIf="tabs[1].products.indexOf(prod) > -1" class="ribbon-wrapper">
@@ -17,27 +16,29 @@
 				<div class="card-block">
 				  <h4 class="card-title">
 					{{prod.name}}
-					<button class="btn btn-sm btn-secondary pull-right" (click)="editProduct(prod)"><i class="fa fa-cog"
-																									   aria-hidden="true"></i>
+					<button class="btn btn-sm btn-secondary top-right-circle" (click)="editProduct(prod)"><i
+							class="fa fa-cog" aria-hidden="true"></i>
 					</button>
+					<span>Edit</span>
 				  </h4>
 				  <div class="d-flex justify-content-between">
 					<div class="d-flex flex-column justify-content-center">
-					  <h5 class="card-title">{{prod.price}} ISK.</h5>
+					  <h5 class="card-title">ISK. {{prod.price}}</h5>
 					</div>
 					<div class="d-flex flex-column justify-content-center">
 					  <p *ngIf="prod.quantitySold > 100" class="badge badge-success pull-left">100+ sold</p>
-					  <p *ngIf="prod.quantityInStock < 1" class="badge badge-danger pull-right">Sold out</p>
-					  <p *ngIf="prod.quantityInStock < 5 && prod.quantityInStock > 0"
+					  <p *ngIf="prod.quantityInStock < 1 && prod.quantitySold <= 100"
+						 class="badge badge-danger pull-right">Sold out
+					  </p>
+					  <p *ngIf="prod.quantityInStock < 5 && prod.quantityInStock > 0 && prod.quantitySold <= 100"
 						 class="badge badge-warning pull-right">Low stock!
 					  </p>
 					</div>
-				  </div>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		</div>
+				  </div> <!-- End of d-flex justify-content-between -->
+				</div> <!-- End of card-block -->
+			  </div> <!-- End of card fadeIn -->
+			</div> <!-- End of col-xl-2 col-lg-3 col-md-6 col-sm-12 col-12 -->
+		  </div> <!-- End of Row -->
 	  </template>
 	</ngb-tab>
   </div>

@@ -1,51 +1,96 @@
+@import "../../variables";
+
 #sellerDetails {
-    .d-flex {
-        margin: 1rem 0;
-        padding-left: 0;
-        flex-wrap: wrap;
+  .d-flex {
+    margin: 1rem 0;
+    padding-left: 0;
+    flex-wrap: wrap;
 
-        .toggler {
-            transform: translateX(200%)
-        }
-        
-        .sellerInfo {
-            height: 100%;
-            display: inline-flex;
-            flex-grow: 1;
-
-            .image {
-                height: 200px;
-                min-width: 200px;
-                margin: 0.9rem 1rem 1rem 0;
-                background-position: center!important;
-                background-repeat: no-repeat!important;
-                background-size: cover!important;
-            }
-
-            .flex-column {
-                justify-content: flex-start;
-            }
-        }
+    .toggler {
+      transform: translateX(200%)
     }
-    
+
+    .sellerInfo {
+      height: 100%;
+      display: inline-flex;
+      flex-grow: 1;
+
+      .image {
+        height: 200px;
+        min-width: 200px;
+        margin: 0.9rem 1rem 1rem 0;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+      }
+
+      .flex-column {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  h1 {
+    padding-left: 0;
+  }
+
+  ngb-tabset {
+    margin-top: 1rem;
+  }
+
+  .card-deck {
+    .row {
+      width: 100%;
+      padding: 1rem 0;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  ngb-pagination {
+    margin: auto;
+  }
+}
+
+#sellerSection {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 600px;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+  color: #333333;
+  .tinyCon {
+    width: 40%;
     h1 {
-        padding-left: 0;
+      padding-top: 5%;
+      font-family: 'SixCaps'; //Need to find new
+      font-size: 6.5rem;
     }
+  }
+  .hugeTilted {
+    right: 12.2rem;
+    top: 0;
+    padding: 0;
+    position: absolute;
+    transform: rotate(270deg);
+    transform-origin: right top 0;
+    h1 {
+      font-family: 'AmericanCaptain';
+      color: $red-color;
+      font-size: 13.5rem;
+      opacity: 0.6;
+      width: 680px;
+    }
+  }
 
-    ngb-tabset {
-        margin-top: 1rem;
-    }
+}
 
-    .card-deck {
-        .row {
-            width: 100%;
-            padding: 1rem 0;
-            display: flex;
-            justify-content: space-between;
-        }
-    }
-
-    ngb-pagination {
-        margin: auto;
-    }
+.ellipses {
+  overflow: hidden;
+  white-space: pre-line;
+  text-overflow: ellipsis;
+  font-weight: 100;
+  text-transform: uppercase;
 }

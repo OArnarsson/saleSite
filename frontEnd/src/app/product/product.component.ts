@@ -32,7 +32,7 @@ export class ProductComponent implements OnInit {
   constructor(private modalService: NgbModal, private productService: ProductService, private toastyService: ToastyService, private toastyConfig: ToastyConfig) { }
 
   ngOnInit() {
-    let def = new Tab('Products', []);
+    let def = new Tab('Allar Vörur', []);
     let top10 = new Tab('Top 10', []);
     this.tabs = [];
     this.tabs.push(def);

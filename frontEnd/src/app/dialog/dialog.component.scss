@@ -1,9 +1,12 @@
 @import '../../variables.scss';
 
 .modalContainer {
-    background: $primary-color;
+  background: rgba(201, 46, 46, 0.83);
 
     span {
         color: white;
     }
+  button:hover{
+    cursor: pointer;
+  }
 }

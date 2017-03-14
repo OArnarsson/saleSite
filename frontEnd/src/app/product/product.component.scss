@@ -1,38 +1,44 @@
 @import '../../variables.scss';
 
 .imageFit {
-    height: 200px;
-    object-fit: cover;
+  height: 200px;
+  object-fit: cover;
 }
 
 .container {
-    background: $secondary-color;
-    border-top-right-radius: 5px;
+  //background: $secondary-color;
+  border-top-right-radius: 5px;
 }
 
 .badge-danger {
-    background: $red-accent-color;
+  background: $red-accent-color;
 }
 
 .badge-warning {
-    background: $yellow-color;
+  background: $yellow-color;
 }
 
 .badge-success {
-    background: $accent-color;
-}
-
-.tabSet {
-    background: $secondary-color;
-    color: red!important;
+  background: $accent-color;
 }
 
 .card {
-    height: 100%;
-    background: $primary-color;
-    .card-block {
-        padding: 0.75rem 0.75rem;
-    }
+  height: 100%;
+  background: #FFFFFF;
+  color: #333333;
+  .card-block {
+    padding: 0.5rem 0.5rem;
+  }
+  .card-title {
+    font-weight: 400;
+    line-height: 1.1rem;
+  }
+  h4.card-title {
+    font-size: 1.2rem;
+  }
+  h5.card-title {
+    font-size: 1rem;
+  }
 }
 
 .ribbon-wrapper {
@@ -45,7 +51,8 @@
   overflow: hidden;
 }
 
-.ribbon{
+.ribbon {
+  color: #FFFFFF;
   background-color: $accent-color;
   text-align: center;
   transform: rotate(-45deg);
@@ -54,4 +61,64 @@
   left: -30px;
   top: 15px;
   width: 120px;
+}
+
+.top-right-circle {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  border-radius: 50%;
+  &:hover {
+    cursor: pointer;
+  }
+  &:hover + span {
+    opacity: 1;
+  }
+}
+
+.largePoster {
+  height: 565px !important;
+  float: left;
+  @media (min-width: 992px) {
+    max-width: 53.6666% !important;
+  }
+  @media (min-width: 1200px) {
+    max-width: 35.66666% !important;
+  }
+  @media (min-width: 0px) and (max-width: 991px) {
+    max-width: 100% !important;
+    height: 270px!important;
+    img{
+      height: 200px!important;
+    }
+  }
+
+  img {
+    height: 490px;
+  }
+  h4.card-title {
+    font-size: 1.6rem;
+  }
+  h5.card-title {
+    font-size: 1.4rem;
+  }
+}
+
+span {
+  transition: opacity 0.2s ease-in;
+  position: absolute;
+  top: -35px;
+  right: -30px;
+  opacity: 0;
+  font-size: 0.6em;
+}
+
+.tinyBox {
+  height: 270px;
+  //width: 200px;
+  float: left;
+  margin: 25px 2.2rem 0 0;
+}
+
+.mosaicCols {
 }

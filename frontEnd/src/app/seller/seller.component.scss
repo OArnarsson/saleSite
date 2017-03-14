@@ -1,43 +1,65 @@
 @import '../../variables.scss';
 
 #sellers {
-    .d-flex {
-        margin: 1rem 0;
-        flex-wrap: wrap;
-        
-        h1 {
-            padding: 0;
-            flex-grow: 1;
-        }
-    }
+  .d-flex {
+    margin: 1rem 0;
+    flex-wrap: wrap;
 
-    .container {
-        background: $secondary-color;
-        border-radius: 5px;
+    h1 {
+      padding: 0;
+      flex-grow: 1;
+      font-family: 'SixCaps';
+      font-size: 5rem;
     }
-    
-    table {
-        margin-top: 1rem;    
-        tr {
-            td:first-child {
-                button {
-                    padding: 0;
-                }
-            }
-            td:last-child {
-                text-align: right;
-            }
-            &:last-child {
-                &:hover {
-                    background-color: $secondary-color;
-                }
-            }
-        }
-    }
+  }
 
-    .modal-footer {
-        button:last-child {
-            margin-left: auto;
+  .container {
+    color: #333333;
+    border-radius: 5px;
+  }
+
+  table {
+    margin-top: 1rem;
+    tr {
+      td:first-child {
+        button {
+          padding: 0;
+          color: #333333;
+          transition: all 0.3s ease;
+          text-decoration: none;
+          &:hover{
+            cursor: pointer;
+          }
         }
+        &:hover > button {
+          color: $red-color;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      td:last-child {
+        text-align: right;
+        button:hover{
+          cursor: pointer;
+        }
+
+      }
+      &:last-of-type {
+        td:first-child{
+          &:hover {
+            cursor: default;
+          }
+        }
+        background-color: #FFFFFF;
+      }
     }
+  }
+
+  .modal-footer {
+    button:last-child {
+      margin-left: auto;
+    }
+  }
+
 }

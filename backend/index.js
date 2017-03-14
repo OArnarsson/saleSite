@@ -36,10 +36,10 @@ function createProduct(sellerid, id, productName, price, quantitySold, quantityI
 
 // Initial data.
 var sellers = [
-	createSeller(1, "Hannyrðaþjónusta Hannesar", "Fatnaður", "http://i.imgur.com/OYVpe2W.jpg?fb"),
-	createSeller(2, "Smíðaverkstæði Sigríðar", "Skartgripir", "https://i.imgur.com/ywaPivVh.jpg"),
-	createSeller(3, "Sælgætisgerð Sjonna og Súsí", "Matvörur", "http://i.imgur.com/IuL474x.jpg"),
-	createSeller(4, "Leirkeraverkstæði Lomma", "Keramik", "https://upload.wikimedia.org/wikipedia/commons/6/67/Potter_at_work,_Jaura,_India.jpg")
+	createSeller(1, "Hannyrðaþjónusta Hannesar", "Fatnaður", "http://img05.deviantart.net/2547/i/2013/165/6/e/katy_perry_paris_fashion_week_png_hq_by_naitsabescasas-d690h3y.png"),
+	createSeller(2, "Smíðaverkstæði Sigríðar", "Skartgripir", "http://www.shzongyue.com/data/out/68/39266464-jewelry.png"),
+	createSeller(3, "Sælgætisgerð Sjonna og Súsí", "Matvörur", "http://mariebelle.com/dev/wp-content/uploads/2014/10/Chocolate-Delivery-New-York_-Chocolate-Gift-Set-Collection_MarieBelle-NY8.png"),
+	createSeller(4, "Leirkeraverkstæði Lomma", "Keramik", "http://www.tuscanimports.com/wp-content/uploads/2016/05/Imprunetta-Collection-Imported-Italian-Terracotta-Pottery.png")
 ];
 
 var products = [
