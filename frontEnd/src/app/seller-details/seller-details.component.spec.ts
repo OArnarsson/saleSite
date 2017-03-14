@@ -9,6 +9,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from "rxjs";
 import { ProductService } from "../apiServices/product.service";
+import { ReplaceSpecialPipe } from '../replace-special.pipe';
 
 let mockRouter = {
   params: () => {return 1}
@@ -73,7 +74,8 @@ describe('SellerDetailsComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         SellerDetailsComponent,
-        ProductComponent
+        ProductComponent,
+        ReplaceSpecialPipe
       ],
       imports: [
         ToastyModule,
@@ -100,5 +102,9 @@ describe('SellerDetailsComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should not be empty', () => {
+    expect(component.getInitData).toBeTruthy();
   });
 });
